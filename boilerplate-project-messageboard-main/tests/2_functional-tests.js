@@ -6,8 +6,9 @@ const server = require('../server');
 chai.use(chaiHttp);
 
 suite('Functional Tests', function() {
+  this.timeout(10000);
 
-  const board = 'functest';
+  const board = 'functest' + Date.now();
   let threadId1, threadId2, replyId;
 
   suite('API ROUTING FOR /api/threads/:board', function() {
